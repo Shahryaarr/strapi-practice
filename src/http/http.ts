@@ -4,16 +4,16 @@ import qs from "qs";
 const baseUrl = getStrapiURL();
 
 const fetchData = async (url: string) => {
-  const authToken = null;
-  const headers = {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${authToken}`,
-    },
-  };
+  //   const authToken = null;
+  //   const headers = {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: `Bearer ${authToken}`,
+  //     },
+  //   };
   try {
-    const response = await fetch(url, authToken ? headers : {});
+    const response = await fetch(url);
     const data = await response.json();
     return flattenAttributes(data);
   } catch (error) {
@@ -34,6 +34,9 @@ export const getHomePageData = async () => {
             populate: true,
           },
           Feature: {
+            populate: true,
+          },
+          card: {
             populate: true,
           },
         },

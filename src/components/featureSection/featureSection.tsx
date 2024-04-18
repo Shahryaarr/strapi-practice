@@ -1,4 +1,14 @@
-import { CheckIcon, ClockIcon, CloudIcon } from "../../assets/Svgs/svgs";
+import {
+  Cart,
+  Certified,
+  Email,
+  Fee,
+  Overhead,
+  Secure,
+  Setup,
+  Social,
+  Unlimited,
+} from "../../assets/Svgs/svgs";
 
 interface featureProps {
   id: number;
@@ -19,29 +29,50 @@ interface FeatureProps {
 
 const getIcon = (name: string) => {
   switch (name) {
-    case "CLOCK_ICON":
-      return <ClockIcon className="w-12 h-12 mb-4 text-gray-900" />;
-    case "CLOUD_ICON":
-      return <CloudIcon className="w-12 h-12 mb-4 text-gray-900" />;
-    case "CHECK_ICON":
-      return <CheckIcon className="w-12 h-12 mb-4 text-gray-900" />;
+    case "SOCIAL_ICON":
+      return <Social className="w-12 h-12 mb-4 text-gray-900" />;
+    case "OVERHEAD_ICON":
+      return <Overhead className="w-12 h-12 mb-4 text-gray-900" />;
+    case "SETUP_ICON":
+      return <Setup className="w-12 h-12 mb-4 text-gray-900" />;
+    case "EMAIL_ICON":
+      return <Email className="w-12 h-12 mb-4 text-gray-900" />;
+    case "SECURE_ICON":
+      return <Secure className="w-12 h-12 mb-4 text-gray-900" />;
+    case "CERTIFIED_ICON":
+      return <Certified className="w-12 h-12 mb-4 text-gray-900" />;
+    case "UNLIMITED_ICON":
+      return <Unlimited className="w-12 h-12 mb-4 text-gray-900" />;
+    case "CART_ICON":
+      return <Cart className="w-12 h-12 mb-4 text-gray-900" />;
+    case "FEE_ICON":
+      return <Fee className="w-12 h-12 mb-4 text-gray-900" />;
+
     default:
       return null;
   }
 };
 
-const FeatureSection = ({ data }: { readonly data: FeatureProps }) => {
-  const { Feature } = data;
+const FeatureSection = ({ data }: Readonly<FeatureProps>) => {
+  const { Feature, title, description } = data;
   return (
     <div className="">
+      <div className="text-center max-w-[600px] m-auto pt-[100px]">
+        <h2 className="text-[48px] text-[#2B292A] font-semibold">{title}</h2>
+        <p className="text-[#555455] text-[24px]">{description}</p>
+      </div>
       <div className="flex-1">
-        <section className="container px-4 py-6 mx-auto md:px-6 lg:py-24">
-          <div className="grid gap-8 md:grid-cols-3">
+        <section className="container px-4 py-4 mx-auto md:px-6 lg:py-20">
+          <div className="grid gap-12 md:grid-cols-3">
             {Feature.map((feature: any) => (
-              <div className="flex flex-col items-center text-center">
+              <div className="flex flex-col items-start text-center">
                 {getIcon(feature.icon)}
-                <h2 className="mb-4 text-2xl font-bold">{feature.heading}</h2>
-                <p className="text-gray-500">{feature.subHading}</p>
+                <h2 className="mb-[12px] text-[20px] font-semibold text-[#807F7F]">
+                  {feature.heading}
+                </h2>
+                <p className="text-[#807F7F] text-start text-[16px]">
+                  {feature.subHading}
+                </p>
               </div>
             ))}
           </div>
