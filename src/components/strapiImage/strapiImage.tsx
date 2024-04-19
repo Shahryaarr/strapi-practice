@@ -3,8 +3,8 @@ import Image from "next/image";
 interface StrapiImageProps {
   src: string;
   alt: string;
-  height: number;
-  width: number;
+  height?: number;
+  width?: number;
   className?: string;
 }
 

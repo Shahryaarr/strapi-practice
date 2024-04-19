@@ -8,6 +8,7 @@ import {
   Setup,
   Social,
   Unlimited,
+  WhyUs,
 } from "../../assets/Svgs/svgs";
 
 interface featureProps {
@@ -58,7 +59,10 @@ const FeatureSection = ({ data }: Readonly<FeatureProps>) => {
   return (
     <div className="">
       <div className="text-center max-w-[600px] m-auto pt-[100px]">
-        <h2 className="text-[48px] text-[#2B292A] font-semibold">{title}</h2>
+        <h2 className="text-[48px] text-[#2B292A] font-semibold flex items-center justify-center mb-6">
+          {title}
+          <WhyUs />
+        </h2>
         <p className="text-[#555455] text-[24px]">{description}</p>
       </div>
       <div className="flex-1">

@@ -36,8 +36,8 @@ export const getHomePageData = async () => {
           Feature: {
             populate: true,
           },
-          card: {
-            populate: true,
+          product: {
+            populate: ["image", "button"],
           },
         },
       },
@@ -53,9 +53,10 @@ export const getGlobalPageData = async () => {
       "layouts.image",
       "layouts.button",
       "layouts.link",
-      "layouts.text",
-      "layouts.logoText",
-      "layouts.socialLinks",
+      "layouts.copyRightText",
+      "layouts.logo",
+      "layouts.links",
+      "layouts.links.navigationLink",
     ],
   });
   return await fetchData(url.href);

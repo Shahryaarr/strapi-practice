@@ -30,6 +30,7 @@ interface headerProps {
 
 const Header = ({ data }: Readonly<headerProps>) => {
   const { image, link, button } = data;
+  console.log(typeof image);
   return (
     <header className=" bg-white border-b-[#EAEAEA] border-b">
       <div className="flex justify-between items-center p-[16px] customeContainer">
