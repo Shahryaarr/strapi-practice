@@ -19,7 +19,6 @@ export default async function RootLayout({
 }>) {
   const globalData = await getGlobalPageData();
   const { layouts } = globalData;
-  console.log(layouts);
   return (
     <html lang="en">
       <body className={inter.className}>

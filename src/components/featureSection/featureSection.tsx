@@ -1,58 +1,6 @@
-import {
-  Cart,
-  Certified,
-  Email,
-  Fee,
-  Overhead,
-  Secure,
-  Setup,
-  Social,
-  Unlimited,
-  WhyUs,
-} from "../../assets/Svgs/svgs";
-
-interface featureProps {
-  id: number;
-  heading: string;
-  subHading: string;
-  icon: string;
-}
-
-interface FeatureProps {
-  data: {
-    id: number;
-    __component: string;
-    title: string;
-    description: string;
-    Feature: featureProps[];
-  };
-}
-
-const getIcon = (name: string) => {
-  switch (name) {
-    case "SOCIAL_ICON":
-      return <Social className="w-12 h-12 mb-4 text-gray-900" />;
-    case "OVERHEAD_ICON":
-      return <Overhead className="w-12 h-12 mb-4 text-gray-900" />;
-    case "SETUP_ICON":
-      return <Setup className="w-12 h-12 mb-4 text-gray-900" />;
-    case "EMAIL_ICON":
-      return <Email className="w-12 h-12 mb-4 text-gray-900" />;
-    case "SECURE_ICON":
-      return <Secure className="w-12 h-12 mb-4 text-gray-900" />;
-    case "CERTIFIED_ICON":
-      return <Certified className="w-12 h-12 mb-4 text-gray-900" />;
-    case "UNLIMITED_ICON":
-      return <Unlimited className="w-12 h-12 mb-4 text-gray-900" />;
-    case "CART_ICON":
-      return <Cart className="w-12 h-12 mb-4 text-gray-900" />;
-    case "FEE_ICON":
-      return <Fee className="w-12 h-12 mb-4 text-gray-900" />;
-
-    default:
-      return null;
-  }
-};
+import { FeatureProps } from "@/lib/types";
+import { getIcon } from "./getIcons";
+import { WhyUs } from "@/assets/Svgs/svgs";
 
 const FeatureSection = ({ data }: Readonly<FeatureProps>) => {
   const { Feature, title, description } = data;

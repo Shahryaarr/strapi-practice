@@ -1,34 +1,6 @@
 import Link from "next/link";
 import StrapiImage from "../strapiImage/strapiImage";
-
-interface logoProps {
-  id: number;
-  url: string;
-  name: string;
-}
-interface navigationLinkProps {
-  id: number;
-  title: string;
-  url: string;
-}
-interface linksProps {
-  id: number;
-  title: string;
-  navigationLink: navigationLinkProps[];
-}
-
-interface footerProps {
-  data: {
-    id: number;
-    component: string;
-    logo: {
-      data: logoProps[];
-    };
-    links: linksProps[];
-    copyRightText: string;
-    navigationLink: navigationLinkProps[];
-  };
-}
+import { footerProps } from "@/lib/types";
 
 const Footer = ({ data }: Readonly<footerProps>) => {
   const { id, logo, links, copyRightText } = data;
@@ -40,7 +12,7 @@ const Footer = ({ data }: Readonly<footerProps>) => {
             {logo.data.map((logo) => (
               <StrapiImage
                 src={logo.url}
-                alt={logo.name}
+                alt={"logo"}
                 height={60}
                 width={175}
                 className="brightness-0	invert"

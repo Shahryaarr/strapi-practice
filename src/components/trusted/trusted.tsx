@@ -1,37 +1,12 @@
+import { imgProps, logosProps, trustedSectionProps } from "@/lib/types";
 import StrapiImage from "../strapiImage/strapiImage";
-
-type imgProps = {
-  id: number;
-  url: string;
-  alternativeText: string;
-};
-
-type logosProps = {
-  id: number;
-  url: string;
-};
-
-type trustedSectionProps = {
-  data: {
-    __component: string;
-    id: number;
-    title: string;
-    image: {
-      data: imgProps[];
-    };
-    logos: {
-      data: logosProps[];
-    };
-  };
-};
 
 const Trusted = ({ data }: trustedSectionProps) => {
   const { title, image, logos } = data;
-  console.log(data, "trusted data");
   return (
-    <section className="relative">
+    <section className="relative h-[1300px]">
       <div className="text-center m-auto">
-        <div className=" flex items-center justify-between absolut top-0 left-0 w-full h-full z-[-1]">
+        <div className=" flex items-center justify-between ">
           {image.data.map((img) => (
             <StrapiImage
               src={img.url}
@@ -43,8 +18,8 @@ const Trusted = ({ data }: trustedSectionProps) => {
             />
           ))}
         </div>
-        <div className=" py-[80px]  rounded-t-[48px]">
-          <div className="bg-white">
+        <div className=" absolute top-[654px] left-0 w-full z-1">
+          <div className="bg-white py-[80px] rounded-t-[48px]">
             <h2 className="text-[48px] text-[#2B292A] font-semibold flex items-center justify-center mb-12">
               {title}
             </h2>

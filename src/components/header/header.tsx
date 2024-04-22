@@ -1,32 +1,6 @@
 import Link from "next/link";
 import StrapiImage from "../strapiImage/strapiImage";
-
-interface linkProps {
-  id: number;
-  url: string;
-  placeholder: string;
-  isExternal: boolean;
-}
-interface imgProps {
-  url: string;
-  id: number;
-  alternativeText: string;
-}
-interface btnProps {
-  id: number;
-  btnText: string;
-  url: string;
-}
-
-interface headerProps {
-  data: {
-    id: number;
-    component: string;
-    link: linkProps[];
-    image: imgProps;
-    button: btnProps;
-  };
-}
+import { headerProps } from "@/lib/types";
 
 const Header = ({ data }: Readonly<headerProps>) => {
   const { image, link, button } = data;

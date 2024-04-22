@@ -3,7 +3,7 @@ import HeroSection from "@/components/heroSection/heroSection";
 import PartnerSection from "@/components/partnerSection/partnerSection";
 import ProductSection from "@/components/productSection/productSection";
 import Trusted from "@/components/trusted/trusted";
-import { getGlobalPageData, getHomePageData } from "@/http/http";
+import { getHomePageData } from "@/http/http";
 
 const blockRenderer = (block: any) => {
   switch (block.__component) {
@@ -24,8 +24,6 @@ const blockRenderer = (block: any) => {
 
 export default async function Home() {
   const strapiData = await getHomePageData();
-  const globalData = await getGlobalPageData();
-  console.log(globalData);
   const { blocks } = strapiData;
   if (!blocks) return <p>No section Found!</p>;
   return <main>{blocks.map(blockRenderer)}</main>;

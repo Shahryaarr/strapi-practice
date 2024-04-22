@@ -1,31 +1,9 @@
 import Link from "next/link";
 import StrapiImage from "../strapiImage/strapiImage";
-
-type imgProps = {
-  id: number;
-  url: string;
-};
-type linkProps = {
-  url: string;
-  placeholder: string;
-};
-
-type partnersProps = {
-  data: {
-    id: number;
-    __component: string;
-    title: string;
-    heading: string;
-    link: linkProps;
-    image: {
-      data: imgProps[];
-    };
-  };
-};
+import { imgProps, partnersProps } from "@/lib/types";
 
 const PartnerSection = ({ data }: partnersProps) => {
   const { title, heading, image, link } = data;
-  console.log(link);
   return (
     <section className="header">
       <div className="text-center m-auto py-[100px]">

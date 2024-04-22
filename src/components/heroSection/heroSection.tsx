@@ -1,39 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { FC } from "react";
 import StrapiImage from "../strapiImage/strapiImage";
-// import { Image } from "next/image";
-interface ImageProps {
-  id: number;
-  url: string;
-  alternativeText: string;
-}
-interface LinkProps {
-  id: number;
-  url: string;
-  placeholder: string;
-  isExternal: boolean;
-}
-interface HeroSectionProps {
-  data: {
-    id: number;
-    __component: string;
-    heading: string;
-    subHeading: string;
-    image: ImageProps;
-    link: LinkProps;
-  };
-}
+import { HeroSectionProps, imgProps } from "@/lib/types";
 
 const HeroSection = ({ data }: Readonly<HeroSectionProps>) => {
   const { heading, subHeading, image, link } = data;
 
   return (
     <header className="h-[890px] overflow-hidden header">
-      <div className="flex items-center justify-between h-full text-white customeContainer gap-[70px]">
-        <div className="max-w-[600px]">
-          <h1 className="text-[100px] leading-[1.2] font-bold  text-black">
+      <div className="md:flex items-center justify-between h-full text-white customeContainer gap-[70px] flex-wrap md:flex-nowrap py-[24px] !px-6">
+        <div className="max-w-[600px] mb-20">
+          <h1 className="text-[40px] md:text-[100px] leading-[1.2] font-bold  text-black">
             {heading}
           </h1>
           <p className="mt-4 text-[18px] text-[#555455] max-w-[540px]">

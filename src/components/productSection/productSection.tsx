@@ -1,39 +1,9 @@
+import { productPageProps } from "@/lib/types";
 import Link from "next/link";
 import StrapiImage from "../strapiImage/strapiImage";
-import { Button } from "../ui/button";
 
-interface ImageProps {
-  id: number;
-  url: string;
-  alternativeText: string;
-}
-interface btnProps {
-  id: number;
-  btnText: string;
-  url: string;
-}
-interface cardProps {
-  id: number;
-  title: string;
-  subTitle: string;
-  image: ImageProps;
-  button: btnProps;
-}
-
-interface productPageProps {
-  data: {
-    id: number;
-    __component: string;
-    title: string;
-    description: string;
-    product: cardProps[];
-  };
-}
-
-const ProductSection = ({ data }: Readonly<productPageProps>) => {
+const ProductSection = ({ data }: productPageProps) => {
   const { title, description, product } = data;
-  console.log(data);
-  console.log(typeof product);
   return (
     <div className="bg-[#2B292A]">
       <div className="text-center pt-[100px]">
