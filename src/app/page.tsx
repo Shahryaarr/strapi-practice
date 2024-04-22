@@ -1,6 +1,8 @@
 import FeatureSection from "@/components/featureSection/featureSection";
 import HeroSection from "@/components/heroSection/heroSection";
+import PartnerSection from "@/components/partnerSection/partnerSection";
 import ProductSection from "@/components/productSection/productSection";
+import Trusted from "@/components/trusted/trusted";
 import { getGlobalPageData, getHomePageData } from "@/http/http";
 
 const blockRenderer = (block: any) => {
@@ -11,6 +13,10 @@ const blockRenderer = (block: any) => {
       return <FeatureSection key={block.id} data={block} />;
     case "layout.product-section":
       return <ProductSection key={block.id} data={block} />;
+    case "layout.partner-section":
+      return <PartnerSection key={block.id} data={block} />;
+    case "layout.trusted-section":
+      return <Trusted key={block.id} data={block} />;
     default:
       null;
   }

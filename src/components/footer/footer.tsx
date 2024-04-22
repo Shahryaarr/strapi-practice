@@ -21,30 +21,32 @@ interface footerProps {
   data: {
     id: number;
     component: string;
-    logo: logoProps;
+    logo: {
+      data: logoProps[];
+    };
     links: linksProps[];
     copyRightText: string;
     navigationLink: navigationLinkProps[];
-    image: logoProps;
   };
 }
 
 const Footer = ({ data }: Readonly<footerProps>) => {
-  console.log(data, "footerPropsfooterProps");
-  const { id, logo, links, copyRightText, image } = data;
-  console.log(typeof logo);
+  const { id, logo, links, copyRightText } = data;
   return (
     <footer className="bg-[#067DF9] text-[#fff] px-4 py-4 mx-auto md:px-6 lg:py-14">
       <div className="container ">
         <div className="grid grid-cols-2 grid-rows-1 gap-4 mb-[80px]">
           <div>
-            <StrapiImage
-              src={logo.url}
-              alt={logo.name}
-              height={60}
-              width={175}
-              className="brightness-0	invert"
-            />
+            {logo.data.map((logo) => (
+              <StrapiImage
+                src={logo.url}
+                alt={logo.name}
+                height={60}
+                width={175}
+                className="brightness-0	invert"
+                key={logo.id}
+              />
+            ))}
           </div>
           <div className="flex gap-[48px]">
             {links.map((link) => (

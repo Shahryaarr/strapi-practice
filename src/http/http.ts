@@ -24,6 +24,27 @@ const fetchData = async (url: string) => {
 export const getHomePageData = async () => {
   const url = new URL("/api/home-page", baseUrl);
   url.search = qs.stringify({
+    // populate: {
+    //   blocks: {
+    //     populate: {
+    //       image: {
+    //         fields: ["url", "alternativeText"],
+    //       },
+    //       link: {
+    //         populate: true,
+    //       },
+    //       Feature: {
+    //         populate: true,
+    //       },
+    //       product: {
+    //         populate: ["image", "button"],
+    //       },
+    //       partner: {
+    //         populate: true,
+    //       },
+    //     },
+    //   },
+    // },
     populate: {
       blocks: {
         populate: {
@@ -38,6 +59,9 @@ export const getHomePageData = async () => {
           },
           product: {
             populate: ["image", "button"],
+          },
+          logos: {
+            populate: true,
           },
         },
       },
