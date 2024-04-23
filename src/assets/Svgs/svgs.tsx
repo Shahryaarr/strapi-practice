@@ -283,8 +283,8 @@ export const WhyUs = () => {
           x2="42.8641"
           y2="6.54794"
           gradientUnits="userSpaceOnUse">
-          <stop stop-color="white" />
-          <stop offset="1" stop-color="#067DF9" />
+          <stop stopColor="white" />
+          <stop offset="1" stopColor="#067DF9" />
         </linearGradient>
       </defs>
     </svg>
