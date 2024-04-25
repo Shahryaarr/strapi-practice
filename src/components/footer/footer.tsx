@@ -7,8 +7,8 @@ const Footer = ({ data }: Readonly<footerProps>) => {
   return (
     <footer className="bg-[#067DF9] text-[#fff] px-4 py-4 mx-auto md:px-6 lg:py-14">
       <div className="container ">
-        <div className="grid grid-cols-2 grid-rows-1 gap-4 mb-[80px]">
-          <div>
+        <div className="grid md:grid-cols-2 grid-cols-1 grid-rows-1 gap-4 md:mb-[80px] mb-[70px]">
+          <div className="md:mt-0 mt-[40px]">
             {logo.data.map((logo) => (
               <StrapiImage
                 src={logo.url}
@@ -20,10 +20,12 @@ const Footer = ({ data }: Readonly<footerProps>) => {
               />
             ))}
           </div>
-          <div className="flex gap-[48px]">
+          <div className="flex md:flex-row flex-col md:gap-[48px] gap-[45px] md:mt-0 mt-[48px]">
             {links.map((link) => (
               <div key={link.id}>
-                <p className="text-[20px] font-semibold mb-6">{link.title}</p>
+                <p className="md:text-[20px] text-[18px] font-semibold mb-6">
+                  {link.title}
+                </p>
                 <ul>
                   {link.navigationLink.map((data) => (
                     <li className="text-[16px] mb-5">

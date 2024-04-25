@@ -87,3 +87,9 @@
   margin: 0 auto;
   padding-inline: 100px;
 }
+
+@media screen and (max-width: 768px) {
+  .customeContainer {
+    padding-inline: 24px;
+  }
+}
